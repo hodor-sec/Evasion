@@ -1,0 +1,6 @@
+C:\Users\vbox\source\repos\AmByp\AmByp\bin\Debug\AmByp.dll
+C:\Users\vbox\source\repos\AmByp\AmByp\bin\Debug\AmByp.pdb
+C:\Users\vbox\source\repos\AmByp\AmByp\obj\Debug\AmByp.csprojAssemblyReference.cache
+C:\Users\vbox\source\repos\AmByp\AmByp\obj\Debug\AmByp.csproj.CoreCompileInputs.cache
+C:\Users\vbox\source\repos\AmByp\AmByp\obj\Debug\AmByp.dll
+C:\Users\vbox\source\repos\AmByp\AmByp\obj\Debug\AmByp.pdb

