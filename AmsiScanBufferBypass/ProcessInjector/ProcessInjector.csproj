@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Rem_proc_inj</AssemblyName>
+    <RootNamespace>execute_program</RootNamespace>
+  </PropertyGroup>
+
+</Project>
