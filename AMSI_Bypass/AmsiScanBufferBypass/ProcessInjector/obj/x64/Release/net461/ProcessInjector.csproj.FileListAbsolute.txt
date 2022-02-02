@@ -1,0 +1,8 @@
+Y:\osep\tools\Evasion\AMSI_Bypass\AmsiScanBufferBypass\ProcessInjector\bin\x64\Release\net461\Rem_proc_inj.dll
+Y:\osep\tools\Evasion\AMSI_Bypass\AmsiScanBufferBypass\ProcessInjector\bin\x64\Release\net461\Rem_proc_inj.pdb
+Y:\osep\tools\Evasion\AMSI_Bypass\AmsiScanBufferBypass\ProcessInjector\obj\x64\Release\net461\ProcessInjector.csprojAssemblyReference.cache
+Y:\osep\tools\Evasion\AMSI_Bypass\AmsiScanBufferBypass\ProcessInjector\obj\x64\Release\net461\ProcessInjector.csproj.CoreCompileInputs.cache
+Y:\osep\tools\Evasion\AMSI_Bypass\AmsiScanBufferBypass\ProcessInjector\obj\x64\Release\net461\ProcessInjector.AssemblyInfoInputs.cache
+Y:\osep\tools\Evasion\AMSI_Bypass\AmsiScanBufferBypass\ProcessInjector\obj\x64\Release\net461\ProcessInjector.AssemblyInfo.cs
+Y:\osep\tools\Evasion\AMSI_Bypass\AmsiScanBufferBypass\ProcessInjector\obj\x64\Release\net461\Rem_proc_inj.dll
+Y:\osep\tools\Evasion\AMSI_Bypass\AmsiScanBufferBypass\ProcessInjector\obj\x64\Release\net461\Rem_proc_inj.pdb

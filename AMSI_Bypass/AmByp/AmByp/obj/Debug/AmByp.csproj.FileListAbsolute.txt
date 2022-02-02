@@ -4,3 +4,9 @@ C:\Users\vbox\source\repos\AmByp\AmByp\obj\Debug\AmByp.csprojAssemblyReference.c
 C:\Users\vbox\source\repos\AmByp\AmByp\obj\Debug\AmByp.csproj.CoreCompileInputs.cache
 C:\Users\vbox\source\repos\AmByp\AmByp\obj\Debug\AmByp.dll
 C:\Users\vbox\source\repos\AmByp\AmByp\obj\Debug\AmByp.pdb
+Y:\osep\tools\Evasion\AMSI_Bypass\AmByp\AmByp\bin\Debug\AmByp.dll
+Y:\osep\tools\Evasion\AMSI_Bypass\AmByp\AmByp\bin\Debug\AmByp.pdb
+Y:\osep\tools\Evasion\AMSI_Bypass\AmByp\AmByp\obj\Debug\AmByp.csprojAssemblyReference.cache
+Y:\osep\tools\Evasion\AMSI_Bypass\AmByp\AmByp\obj\Debug\AmByp.csproj.CoreCompileInputs.cache
+Y:\osep\tools\Evasion\AMSI_Bypass\AmByp\AmByp\obj\Debug\AmByp.dll
+Y:\osep\tools\Evasion\AMSI_Bypass\AmByp\AmByp\obj\Debug\AmByp.pdb
